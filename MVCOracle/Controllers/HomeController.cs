@@ -12,7 +12,12 @@ namespace MVCOracle.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();              
+            using (var conexion = new OracleEntities())
+            {
+                var query = (from p in conexion.PRODUCTOS
+                             select p).ToList();
+                return View(query);
+            }
         }
     }
 }

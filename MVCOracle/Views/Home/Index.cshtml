@@ -1,7 +1,20 @@
-﻿
+﻿@model List<MVCOracle.Models.PRODUCTO>
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+<table>
+    <thead>
 
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.CLAVE </td>
+            <td>@item.NOMBRE </td>
+        </tr>
+        }
+    </tbody>
+</table>
